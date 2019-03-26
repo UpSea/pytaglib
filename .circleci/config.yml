@@ -27,6 +27,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            id
             python3 setup.py build --cython
 
       - save_cache:
