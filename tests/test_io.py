@@ -45,6 +45,8 @@ def test_file_with_non_ascii_name_throws_on_readonly_save(tmpdir):
     """Motivated by https://github.com/supermihi/pytaglib/issues/21.
     """
     print(os.getuid())
+    print(type(os.getuid()))
+    print(os.getuid() == 0)
     copy_file = copy_test_file('readönly.mp3', tmpdir)
     os.chmod(copy_file, stat.S_IREAD)
     tfile = taglib.File(copy_file.encode('utf8'))
